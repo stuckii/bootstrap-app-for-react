@@ -6,7 +6,8 @@ class TodoInput extends Component {
         return (
             <div className="todo-input">
                 <input type="text"></input>
-                <button type="button">
+                <button type="button"
+                    onClick={this.props.onSave}>
                     <span>save</span>
                 </button>
             </div>            

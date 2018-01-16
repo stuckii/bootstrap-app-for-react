@@ -9,10 +9,19 @@ class Todos extends Component {
             todos: [1, 2, 3]
         };
     }
+
+    onSave = function() {
+        this.setState({
+            todos: this.state.todos.concat([9])
+        });
+    }
+
     render() {
         return (
             <div className="todos">
-                <TodoInput />
+                <TodoInput
+                    onSave={this.onSave.bind(this)}
+                />
                 <TodoList
                     todos={this.state.todos}
                 />

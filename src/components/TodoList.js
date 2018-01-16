@@ -4,11 +4,11 @@ class TodoList extends Component {
     state = {  }
     render() {
         return (
-            <div class="todo-list">
+            <div className="todo-list">
                 <ul>
                     {
                         this.props.todos.map(function(todo, index) {
-                            return <li>{todo}</li>
+                            return <li key={index}>{todo}</li>
                         })
                     }
                 </ul>
