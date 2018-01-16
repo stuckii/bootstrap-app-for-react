@@ -4,14 +4,14 @@ class Todos extends Component {
     state = {  }
     render() {
         return (
-            <div className="Todos">
-                <div className="TodoInput">
+            <div className="todos">
+                <div className="todo-input">
                     <input type="text"></input>
                     <button type="button">
                         <span>save</span>
                     </button>
                 </div>
-                <div class="TodoList">
+                <div class="todo-list">
                     <ul>
                         <li>1</li>
                         <li>2</li>
