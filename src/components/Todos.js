@@ -24,12 +24,22 @@ class Todos extends Component {
     // }
 
     onSave = function(event) {
-        var todo = this.state.todo,
+        const todo = this.state.todo,
             todos = this.state.todos;
 
         this.setState({
             todo: '',
             todos: todos.concat(todo)
+        });
+    }
+
+    onDelete = function(index) {
+        var todos = this.state.todos;
+        
+        todos.splice(index, 1);
+
+        this.setState({
+            todos: todos
         });
     }
 
@@ -43,6 +53,7 @@ class Todos extends Component {
                 />
                 <TodoList
                     todos={this.state.todos}
+                    onDelete={this.onDelete.bind(this)}
                 />
             </div>
         );
