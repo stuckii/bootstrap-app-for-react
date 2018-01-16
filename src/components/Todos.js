@@ -8,7 +8,9 @@ class Todos extends Component {
         return (
             <div className="todos">
                 <TodoInput />
-                <TodoList />
+                <TodoList
+                    todos={[1, 2, 3]}
+                />
             </div>
         );
     }

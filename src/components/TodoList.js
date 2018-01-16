@@ -6,9 +6,11 @@ class TodoList extends Component {
         return (
             <div class="todo-list">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    {
+                        this.props.todos.map(function(todo, index) {
+                            return <li>{todo}</li>
+                        })
+                    }
                 </ul>
             </div>            
         );
