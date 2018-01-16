@@ -6,13 +6,30 @@ class Todos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos: [1, 2, 3]
+            todo: '',
+            todos: []
         };
     }
 
-    onSave = function() {
+    onChange = function(event) {
         this.setState({
-            todos: this.state.todos.concat([9])
+            todo: event.target.value
+        });
+    }
+
+    // onChange = (event) => {
+    //     this.setState({
+    //         todo: event.target.value
+    //     });
+    // }
+
+    onSave = function(event) {
+        var todo = this.state.todo,
+            todos = this.state.todos;
+
+        this.setState({
+            todo: '',
+            todos: todos.concat(todo)
         });
     }
 
@@ -20,6 +37,8 @@ class Todos extends Component {
         return (
             <div className="todos">
                 <TodoInput
+                    todo={this.state.todo}
+                    onChange={this.onChange.bind(this)}
                     onSave={this.onSave.bind(this)}
                 />
                 <TodoList
