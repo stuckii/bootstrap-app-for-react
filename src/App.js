@@ -14,6 +14,7 @@ class App extends Component {
         <div>
           <ul>
             <li><Link to="/">Home</Link></li>
+            <li><Link to="/todos">Todos</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/topics">Topics</Link></li>
           </ul>
@@ -21,6 +22,7 @@ class App extends Component {
           <hr/>
 
           <Route exact path="/" component={Home}/>
+          <Route path="/todos" component={Todos}/>
           <Route path="/about" component={About}/>
           <Route path="/topics" component={Topics}/>
         </div>
